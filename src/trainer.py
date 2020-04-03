@@ -6,6 +6,7 @@ import absl
 import tensorflow as tf
 
 from metrics import Metrics
+from reducer import ReduceLearningRate
 
 logger = absl.logging
 
