@@ -15,7 +15,7 @@ class Trainer(object):
 
   def __init__(
     self, model, logdir, optimizer, loss_fn, num_classes, input_shape,
-    ckpt_steps=100, factor=0.5, patience=5, min_lr=1e-6):
+    ckpt_steps=1000, factor=0.5, patience=5, min_lr=1e-6):
 
     # model
     self.model = model
@@ -114,10 +114,6 @@ class Trainer(object):
         start_time = time.time()
         self.save_checkpoints(ckpt, manager, step)
         logger.info(f'Save checkpoint: {time.time() - start_time:.4f} sec')
-
-        start_time = time.time()
-        self.save_train_images(x_train.numpy(), y_train.numpy(), step)
-        logger.info(f'Save train images: {time.time() - start_time:.4f} sec')
 
         # validation for each steps
         start_time = time.time()
