@@ -19,7 +19,7 @@ logger = absl.logging
 
 
 FLAGS = flags.FLAGS
-flags.DEFINE_float('validation_split_ratio', 0.2, 'Validation data split ratio')
+flags.DEFINE_float('validation_split_ratio', 0.8, 'Validation data split ratio')
 
 flags.DEFINE_float('learning_rate', 1e-2, 'Learning rate')
 flags.DEFINE_integer('learning_rate_decay_steps', 0, 'Learning rate decay steps')

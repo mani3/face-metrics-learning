@@ -3,6 +3,7 @@ import time
 import datetime
 
 import absl
+import numpy as np
 import tensorflow as tf
 
 from metrics import Metrics
@@ -15,7 +16,7 @@ class Trainer(object):
 
   def __init__(
     self, model, logdir, optimizer, loss_fn, num_classes, input_shape,
-    ckpt_steps=1000, factor=0.5, patience=5, min_lr=1e-6):
+    ckpt_steps=1000, factor=np.sqrt(0.1), patience=3, min_lr=1e-6):
 
     # model
     self.model = model
@@ -68,7 +69,7 @@ class Trainer(object):
       # Validation for final
       self.valid_loop(loss_fn, valid_dataset, step, True)
 
-      # Save weight
+      # Save weights
       self.save_weights(step)
 
   def train_loop(
@@ -142,6 +143,12 @@ class Trainer(object):
     self.metrics.write_valid(step)
     score = self.metrics.get_valid_accuracy()
     self.save_best_score_model(score)
+
+    if hasattr(self, 'reduce_lr'):
+      epoch = step // self.logging_steps
+      new_lr = self.reduce_lr.new_lr(epoch, score.numpy())
+      self.optimizer.lr.assign(new_lr)
+
     logger.info(f'Save metrics: {time.time() - start_time:.4f} sec')
     logger.info(f'Valid accuracy: {score:.4f}')
     self.metrics.reset_valid()
