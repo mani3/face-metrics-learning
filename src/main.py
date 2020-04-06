@@ -40,7 +40,7 @@ flags.DEFINE_string('optimizer_name', 'adam', 'Optimizer name("adam", "momentum"
 
 flags.DEFINE_string('input_dir', './train_faces', 'Training input dir')
 flags.DEFINE_string('output_dir', './outputs', 'Outputs dir')
-flags.DEFINE_string('saved_model_path', None, 'Pretrained saved model path')
+flags.DEFINE_string('h5_model_path', None, 'Pretrained saved model path')
 
 flags.DEFINE_integer('num_gpus', 1, 'Number of gpu')
 
@@ -117,8 +117,9 @@ def run(logdir, model_name, opt_name, loss_name):
                     alpha=FLAGS.mobilenet_alpha)
   logger.info(model.summary())
 
-  if FLAGS.saved_model_path:
-    model = tf.keras.models.load_model(FLAGS.saved_model_path)
+  if FLAGS.h5_model_path:
+    model.load_weights(FLAGS.h5_model_path)
+    logger.info(f'Loaded weights: {FLAGS.h5_model_path}')
 
   optimizer = get_optimizer(opt_name)
   loss = get_loss(loss_name)

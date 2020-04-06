@@ -68,6 +68,9 @@ class Trainer(object):
       # Validation for final
       self.valid_loop(loss_fn, valid_dataset, step, True)
 
+      # Save weight
+      self.save_weights(step)
+
   def train_loop(
     self, optimizer, loss_fn, train_dataset, valid_dataset):
 
@@ -208,6 +211,14 @@ class Trainer(object):
     save_path = manager.save()
     logger.info('Save checkpoint for step {}: {}'.format(
       int(ckpt.step), save_path))
+
+  def save_weights(self, step):
+    filename = f'model-{step}.h5'
+    weight_dir = os.path.join(self.logdir, 'weights')
+    model_path = os.path.join(weight_dir, filename)
+    os.makedirs(weight_dir, exist_ok=True)
+    self.model.save_weights(model_path)
+    logger.info(f'Save weights for step {step}: {model_path}')
 
   @tf.function
   def train_step(
