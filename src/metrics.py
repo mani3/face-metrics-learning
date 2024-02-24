@@ -2,31 +2,30 @@ import tensorflow as tf
 
 
 class Metrics(object):
-
   def __init__(self, num_classes):
     self.num_classes = num_classes
 
     m = tf.keras.metrics
-    loss_types = ['total']
+    loss_types = ["total"]
 
     self.metrics_loss_train = []
     self.metrics_loss_valid = []
 
     for t in loss_types:
-      name = 'Loss/train/{}'.format(t)
+      name = "Loss/train/{}".format(t)
       l = m.Mean(name, dtype=tf.float32)
       self.metrics_loss_train.append(l)
-      name = 'Loss/valid/{}'.format(t)
+      name = "Loss/valid/{}".format(t)
       l = m.Mean(name, dtype=tf.float32)
       self.metrics_loss_valid.append(l)
 
-    self.accuracy_train = m.SparseCategoricalAccuracy('Accuracy/train')
-    self.accuracy_valid = m.SparseCategoricalAccuracy('Accuracy/valid')
-    self.auc_valid = m.AUC(name='AUC/valid')
+    self.accuracy_train = m.SparseCategoricalAccuracy("Accuracy/train")
+    self.accuracy_valid = m.SparseCategoricalAccuracy("Accuracy/valid")
+    self.auc_valid = m.AUC(name="AUC/valid")
 
-    self.eval_cos_positive = m.Mean('Eval/consine/positive')
-    self.eval_cos_negative = m.Mean('Eval/consine/negative')
-    self.eval_embedding_mean = m.Mean('Eval/embedding/mean')
+    self.eval_cos_positive = m.Mean("Eval/consine/positive")
+    self.eval_cos_negative = m.Mean("Eval/consine/negative")
+    self.eval_embedding_mean = m.Mean("Eval/embedding/mean")
 
   def set_train_loss(self, logs: list):
     for m, l in zip(self.metrics_loss_train, logs):
@@ -60,16 +59,12 @@ class Metrics(object):
     pair_labels = tf.matmul(one_hot, tf.transpose(one_hot))
 
     exclude_diag_mask = tf.abs(tf.linalg.diag(tf.ones(batch_size)) - 1)
-    pair_cosine = tf.boolean_mask(
-      cos_theta, tf.cast(exclude_diag_mask > 0, tf.bool))
-    pair_filter = tf.boolean_mask(
-      pair_labels, tf.cast(exclude_diag_mask > 0, tf.bool))
+    pair_cosine = tf.boolean_mask(cos_theta, tf.cast(exclude_diag_mask > 0, tf.bool))
+    pair_filter = tf.boolean_mask(pair_labels, tf.cast(exclude_diag_mask > 0, tf.bool))
     pair_filter.set_shape([None])
 
-    positive_pair = tf.boolean_mask(
-      pair_cosine, tf.cast(pair_filter > 0, tf.bool))
-    negative_pair = tf.boolean_mask(
-      pair_cosine, tf.cast(pair_filter < 1, tf.bool))
+    positive_pair = tf.boolean_mask(pair_cosine, tf.cast(pair_filter > 0, tf.bool))
+    negative_pair = tf.boolean_mask(pair_cosine, tf.cast(pair_filter < 1, tf.bool))
     self.eval_cos_positive(positive_pair)
     self.eval_cos_negative(negative_pair)
     self.eval_embedding_mean(embeddings)
@@ -85,7 +80,7 @@ class Metrics(object):
       self.auc_valid,
       self.eval_cos_positive,
       self.eval_cos_negative,
-      self.eval_embedding_mean
+      self.eval_embedding_mean,
     ]
     for m in metrics_list:
       tf.summary.scalar(m.name, m.result(), step=step)
@@ -98,7 +93,7 @@ class Metrics(object):
       self.auc_valid,
       self.eval_cos_positive,
       self.eval_cos_negative,
-      self.eval_embedding_mean
+      self.eval_embedding_mean,
     ]
     for m in metrics_list:
       m.reset_states()

@@ -2,9 +2,7 @@ import numpy as np
 
 
 class ReduceLearningRate(object):
-
-  def __init__(self, init_lr, factor=np.sqrt(0.1), patience=5,
-               mode='max', min_delta=1e-4, min_lr=0):
+  def __init__(self, init_lr, factor=np.sqrt(0.1), patience=5, mode="max", min_delta=1e-4, min_lr=0):
     self.current_lr = init_lr
     self.factor = factor
     self.patience = patience
@@ -18,7 +16,7 @@ class ReduceLearningRate(object):
     self._reset()
 
   def _reset(self):
-    if self.mode == 'min':
+    if self.mode == "min":
       self.monitor_op = lambda a, b: np.less(a, b - self.min_delta)
       self.best = np.Inf
     else:
@@ -39,6 +37,5 @@ class ReduceLearningRate(object):
           new_lr = max(new_lr, self.min_lr)
           self.current_lr = new_lr
           self.wait = 0
-          print('Epoch %05d: ReduceLearningRate reducing learning '
-                'rate to %s.' % (epoch + 1, new_lr))
+          print("Epoch %05d: ReduceLearningRate reducing learning " "rate to %s." % (epoch + 1, new_lr))
     return self.current_lr

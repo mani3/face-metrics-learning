@@ -12,18 +12,19 @@ class ArcFace(tf.keras.layers.Layer):
   def build(self, input_shape):
     n = self.n_classes
     self.kernels = self.add_weight(
-      name='kernel',
+      name="kernel",
       shape=(input_shape[0][1], n),
-      initializer='glorot_uniform',
+      initializer="glorot_uniform",
       trainable=True,
-      regularizer=self.regularizer)
+      regularizer=self.regularizer,
+    )
     super(ArcFace, self).build(input_shape)
 
   def call(self, inputs, training=None):
     x, y = inputs
     x = tf.math.l2_normalize(x, axis=1)
     W = tf.nn.l2_normalize(self.kernels, axis=0)
-    logits = tf.matmul(x, W, name='original_target_logits')
+    logits = tf.matmul(x, W, name="original_target_logits")
 
     if not training:
       return self.s * logits

@@ -13,11 +13,19 @@ logger = absl.logging
 
 
 class Trainer(object):
-
   def __init__(
-    self, model, logdir, optimizer, loss_fn, num_classes, input_shape,
-    ckpt_steps=1000, factor=np.sqrt(0.1), patience=3, min_lr=1e-6):
-
+    self,
+    model,
+    logdir,
+    optimizer,
+    loss_fn,
+    num_classes,
+    input_shape,
+    ckpt_steps=1000,
+    factor=np.sqrt(0.1),
+    patience=3,
+    min_lr=1e-6,
+  ):
     # model
     self.model = model
     self.logdir = logdir
@@ -42,14 +50,12 @@ class Trainer(object):
 
     try:
       init_lr = optimizer.lr.numpy()
-      self.reduce_lr = ReduceLearningRate(
-        init_lr, factor=factor, patience=patience, min_lr=min_lr)
+      self.reduce_lr = ReduceLearningRate(init_lr, factor=factor, patience=patience, min_lr=min_lr)
     except Exception as e:
       print(e)
 
   def get_callbacks(self, logdir, profile_batch=0):
-    tensorboard_callback = tf.keras.callbacks.TensorBoard(
-      log_dir=logdir, histogram_freq=1, profile_batch=profile_batch)
+    tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir, histogram_freq=1, profile_batch=profile_batch)
     return [tensorboard_callback]
 
   def train(self, dataset, logging_steps, lr=None):
@@ -63,8 +69,7 @@ class Trainer(object):
 
     with self.summary_writer.as_default():
       # Train loop
-      step = self.train_loop(
-        optimizer, loss_fn, train_dataset, valid_dataset)
+      step = self.train_loop(optimizer, loss_fn, train_dataset, valid_dataset)
 
       # Validation for final
       self.valid_loop(loss_fn, valid_dataset, step, True)
@@ -72,18 +77,15 @@ class Trainer(object):
       # Save weights
       self.save_weights(step)
 
-  def train_loop(
-    self, optimizer, loss_fn, train_dataset, valid_dataset):
-
+  def train_loop(self, optimizer, loss_fn, train_dataset, valid_dataset):
     def logging_train(y_true, y_pred, step):
       # train logging
       self.metrics.set_train_accuracy(y_true, y_pred)
 
       if step % self.train_log_steps == 0:
-
         # https://github.com/tensorflow/models/issues/7687
         lr = optimizer._decayed_lr(var_dtype=tf.float32)
-        tf.summary.scalar('Learning Rate', data=lr, step=step)
+        tf.summary.scalar("Learning Rate", data=lr, step=step)
 
         self.metrics.write_train(step)
         self.metrics.reset_train()
@@ -94,14 +96,13 @@ class Trainer(object):
     # elapsed time per steps
     global_step_time = time.time()
 
-    for (x_train, y_train) in train_dataset:
+    for x_train, y_train in train_dataset:
       # manually update steps
       step += 1
       ckpt.step.assign(step)
 
       # training step
-      y_true, y_pred = self.train_step(
-        self.model, optimizer, loss_fn, x_train, y_train)
+      y_true, y_pred = self.train_step(self.model, optimizer, loss_fn, x_train, y_train)
 
       logging_train(y_train, y_pred, step)
 
@@ -109,20 +110,20 @@ class Trainer(object):
         self.save_checkpoints(ckpt, manager, step)
         elapsed_time = time.time() - global_step_time
         step_time = elapsed_time / self.ckpt_steps
-        tf.summary.scalar('Global Step', data=step_time, step=step)
-        logger.info(f'Global step: {step_time:.4f} sec')
+        tf.summary.scalar("Global Step", data=step_time, step=step)
+        logger.info(f"Global step: {step_time:.4f} sec")
         global_step_time = time.time()
 
       if step % self.logging_steps == 0:
         # save checkpoints
         start_time = time.time()
         self.save_checkpoints(ckpt, manager, step)
-        logger.info(f'Save checkpoint: {time.time() - start_time:.4f} sec')
+        logger.info(f"Save checkpoint: {time.time() - start_time:.4f} sec")
 
         # validation for each steps
         start_time = time.time()
         self.valid_loop(loss_fn, valid_dataset, step)
-        logger.info(f'Validation time: {time.time() - start_time:.4f} sec')
+        logger.info(f"Validation time: {time.time() - start_time:.4f} sec")
     return step
 
   def valid_loop(self, loss_fn, valid_dataset, step, output_image=False):
@@ -132,11 +133,9 @@ class Trainer(object):
     start_time = time.time()
 
     # Validation
-    for (x_valid, y_valid) in valid_dataset:
-      y_true, y_pred, prelogits = self.valid_step(
-        self.model, loss_fn, x_valid, y_valid)
-      embeddings = tf.math.l2_normalize(
-        prelogits, axis=1, epsilon=1e-10, name='embeddings')
+    for x_valid, y_valid in valid_dataset:
+      y_true, y_pred, prelogits = self.valid_step(self.model, loss_fn, x_valid, y_valid)
+      embeddings = tf.math.l2_normalize(prelogits, axis=1, epsilon=1e-10, name="embeddings")
       logging_valid(y_true, y_pred, embeddings)
 
     start_time = time.time()
@@ -144,19 +143,19 @@ class Trainer(object):
     score = self.metrics.get_valid_accuracy()
     self.save_best_score_model(score)
 
-    if hasattr(self, 'reduce_lr'):
+    if hasattr(self, "reduce_lr"):
       epoch = step // self.logging_steps
       new_lr = self.reduce_lr.new_lr(epoch, score.numpy())
       self.optimizer.lr.assign(new_lr)
 
-    logger.info(f'Save metrics: {time.time() - start_time:.4f} sec')
-    logger.info(f'Valid accuracy: {score:.4f}')
+    logger.info(f"Save metrics: {time.time() - start_time:.4f} sec")
+    logger.info(f"Valid accuracy: {score:.4f}")
     self.metrics.reset_valid()
 
   def save(self, dirname=None):
     if dirname is None:
-      dirname = datetime.datetime.now().strftime('%s')
-    path = os.path.join(self.logdir, 'models', dirname)
+      dirname = datetime.datetime.now().strftime("%s")
+    path = os.path.join(self.logdir, "models", dirname)
     os.makedirs(path, exist_ok=True)
     self.convert(self.model, path)
 
@@ -166,23 +165,22 @@ class Trainer(object):
     # Image Preprocessing
     # image_size = self.input_shape[0]
     # input_shape = (None, None, 3)
-    inputs = tf.keras.Input(self.input_shape, dtype=tf.uint8, name='inputs')
+    inputs = tf.keras.Input(self.input_shape, dtype=tf.uint8, name="inputs")
     # inputs = tf.image.resize_with_pad(inputs, image_size, image_size)
     x = tf.cast(inputs, dtype=tf.float32)
-    x = tf.math.divide(x, 255.)
+    x = tf.math.divide(x, 255.0)
 
     # Get base model layer
     prelogits = model.layers[1](x)
-    prelogits = Lambda(lambda x: x, name='prelogits')(prelogits)
+    prelogits = Lambda(lambda x: x, name="prelogits")(prelogits)
 
     def l2_norm(x):
       return tf.math.l2_normalize(x, axis=1, epsilon=1e-10)
-    embeddings = Lambda(l2_norm, name='embeddings')(prelogits)
+
+    embeddings = Lambda(l2_norm, name="embeddings")(prelogits)
 
     # Output type
-    predictions = {
-      'embeddings': embeddings, 'prelogits': prelogits
-    }
+    predictions = {"embeddings": embeddings, "prelogits": prelogits}
 
     model = tf.keras.Model(inputs, predictions)
     print(model.summary())
@@ -191,45 +189,40 @@ class Trainer(object):
   def save_best_score_model(self, score):
     if score < self.best_threshold:
       return
-    dirname = datetime.datetime.now().strftime('%s')
-    dirname = '{}-{:.4f}'.format(dirname, score)
+    dirname = datetime.datetime.now().strftime("%s")
+    dirname = "{}-{:.4f}".format(dirname, score)
     self.save(dirname)
     self.best_threshold = score
 
   def restore_checkpoints(self, optimizer):
     step = 0
-    ckpt_path = os.path.join(self.logdir, 'ckpts')
-    ckpt = tf.train.Checkpoint(
-      step=tf.Variable(step, tf.int64), optimizer=optimizer, net=self.model)
+    ckpt_path = os.path.join(self.logdir, "ckpts")
+    ckpt = tf.train.Checkpoint(step=tf.Variable(step, tf.int64), optimizer=optimizer, net=self.model)
     manager = tf.train.CheckpointManager(ckpt, ckpt_path, max_to_keep=1)
     ckpt.restore(manager.latest_checkpoint)
 
     if manager.latest_checkpoint:
       step = ckpt.step.numpy()
-      logger.info(
-        'Restore from ckpt: {}, step={}'.format(
-          manager.latest_checkpoint, step))
+      logger.info("Restore from ckpt: {}, step={}".format(manager.latest_checkpoint, step))
     else:
-      logger.info('Initialize from scratch')
+      logger.info("Initialize from scratch")
     return ckpt, manager, step
 
   def save_checkpoints(self, ckpt, manager, step):
     ckpt.step.assign(step)
     save_path = manager.save()
-    logger.info('Save checkpoint for step {}: {}'.format(
-      int(ckpt.step), save_path))
+    logger.info("Save checkpoint for step {}: {}".format(int(ckpt.step), save_path))
 
   def save_weights(self, step):
-    filename = f'model-{step}.h5'
-    weight_dir = os.path.join(self.logdir, 'weights')
+    filename = f"model-{step}.h5"
+    weight_dir = os.path.join(self.logdir, "weights")
     model_path = os.path.join(weight_dir, filename)
     os.makedirs(weight_dir, exist_ok=True)
     self.model.save_weights(model_path)
-    logger.info(f'Save weights for step {step}: {model_path}')
+    logger.info(f"Save weights for step {step}: {model_path}")
 
   @tf.function
-  def train_step(
-    self, model, optimizer, loss_fn, x_train, y_train):
+  def train_step(self, model, optimizer, loss_fn, x_train, y_train):
     with tf.GradientTape() as tape:
       y_pred, prelogits = model([x_train, y_train], training=True)
       losses = loss_fn(y_train, y_pred)
