@@ -1,7 +1,7 @@
 absl-py==2.1.0
 aiofiles==22.1.0
 aioquic-mitmproxy==0.9.21.1
-aiosqlite==0.19.0
+aiosqlite==0.20.0
 anyio==3.6.2
 appnope==0.1.4
 argon2-cffi==21.3.0
