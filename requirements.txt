@@ -219,7 +219,7 @@ scikit-learn==1.4.2
 scipy==1.14.0
 seaborn==0.13.2
 Send2Trash==1.8.3
-service-identity==23.1.0
+service-identity==24.1.0
 shapely==2.0.4
 six==1.16.0
 smartypants==2.0.1
