@@ -34,7 +34,7 @@ coloredlogs==15.0.1
 comm==0.1.3
 contextlib2==21.6.0
 contourpy==1.2.1
-cryptography==42.0.4
+cryptography==44.0.1
 ctranslate2==4.0.0
 cycler==0.12.1
 Cython==3.0.10
@@ -72,8 +72,8 @@ google-auth-oauthlib==1.2.0
 google-pasta==0.2.0
 googleapis-common-protos==1.63.0
 grpcio==1.62.2
-h11==0.14.0
-h2==4.1.0
+h11==0.16.0
+h2==4.3.0
 h5py==3.11.0
 hpack==4.0.0
 httpcore==1.0.5
@@ -96,7 +96,7 @@ ipywidgets==8.1.2
 isoduration==20.11.0
 itsdangerous==2.1.2
 jedi==0.19.1
-Jinja2==3.1.4
+Jinja2==3.1.6
 jmespath==1.0.1
 joblib==1.4.0
 json5==0.9.25
@@ -111,7 +111,7 @@ jupyter-ydoc==0.2.4
 jupyter_client==8.6.1
 jupyter_core==5.7.2
 jupyter_server==2.14.1
-jupyterlab==4.1.8
+jupyterlab==4.4.7
 jupyterlab-pygments==0.2.2
 jupyterlab_server==2.27.1
 jupyterlab_widgets==3.0.10
@@ -148,7 +148,7 @@ nbformat==5.10.4
 nest-asyncio==1.5.6
 networkx==3.3
 nodeenv==1.8.0
-notebook==7.1.3
+notebook==7.4.5
 notebook_shim==0.2.4
 numpy==1.26.4
 oauthlib==3.2.2
@@ -174,7 +174,7 @@ pre-commit==3.6.0
 prometheus_client==0.20.0
 promise==2.3
 prompt-toolkit==3.0.43
-protobuf==3.20.3
+protobuf==4.25.8
 psutil==5.9.5
 ptyprocess==0.7.0
 publicsuffix2==2.20191221
@@ -203,7 +203,7 @@ pyzmq==26.0.2
 qtconsole==5.6.1
 QtPy==2.4.1
 referencing==0.35.1
-requests==2.32.3
+requests==2.32.4
 requests-oauthlib==2.0.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
@@ -246,7 +246,7 @@ tinycss2==1.2.1
 tokenizers==0.15.2
 toml==0.10.2
 tomli==2.0.1
-tornado==6.4.1
+tornado==6.5
 tqdm==4.66.3
 traitlets==5.14.3
 typeguard==2.13.3
@@ -256,14 +256,14 @@ tzdata==2023.3
 Unidecode==1.3.6
 uri-template==1.2.0
 uritemplate==4.1.1
-urllib3==2.2.2
+urllib3==2.5.0
 urwid-mitmproxy==2.1.2.1
-virtualenv==20.25.0
+virtualenv==20.26.6
 wcwidth==0.2.13
 webcolors==1.13
 webencodings==0.5.1
 websocket-client==1.5.1
-Werkzeug==3.0.3
+Werkzeug==3.0.6
 widgetsnbextension==4.0.10
 wrapt==1.16.0
 wsproto==1.2.0
