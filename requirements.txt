@@ -167,7 +167,7 @@ pelican-render-math==1.0.3
 pep8==1.7.1
 pexpect==4.9.0
 pickleshare==0.7.5
-pillow==10.3.0
+pillow==11.3.0
 platformdirs==4.2.2
 pluggy==1.4.0
 pre-commit==3.6.0
