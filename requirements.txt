@@ -39,7 +39,7 @@ ctranslate2==4.0.0
 cycler==0.12.1
 Cython==3.0.10
 debugpy==1.6.7
-decorator==5.1.1
+decorator==5.2.1
 defusedxml==0.7.1
 dill==0.3.8
 distlib==0.3.8
