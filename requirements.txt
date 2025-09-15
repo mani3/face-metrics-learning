@@ -247,7 +247,7 @@ tokenizers==0.15.2
 toml==0.10.2
 tomli==2.0.1
 tornado==6.5
-tqdm==4.66.3
+tqdm==4.67.1
 traitlets==5.14.3
 typeguard==2.13.3
 typing_extensions==4.8.0
