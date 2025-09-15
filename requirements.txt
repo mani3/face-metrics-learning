@@ -184,7 +184,7 @@ pyarrow==16.0.0
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
 pycodestyle==2.11.1
-pycparser==2.21
+pycparser==2.23
 pyflakes==3.2.0
 Pygments==2.17.2
 pylsqpack==0.3.18
