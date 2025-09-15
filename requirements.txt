@@ -153,7 +153,7 @@ notebook_shim==0.2.4
 numpy==1.26.4
 oauthlib==3.2.2
 onnxruntime==1.17.1
-opencv-python==4.9.0.80
+opencv-python==4.12.0.88
 opt-einsum==3.3.0
 optree==0.11.0
 packaging==23.1
