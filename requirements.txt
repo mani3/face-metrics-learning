@@ -188,7 +188,7 @@ pycparser==2.23
 pyflakes==3.2.0
 Pygments==2.17.2
 pylsqpack==0.3.18
-pyOpenSSL==23.3.0
+pyOpenSSL==25.3.0
 pyparsing==3.1.2
 pyperclip==1.8.2
 pyrsistent==0.20.0
