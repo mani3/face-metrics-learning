@@ -18,11 +18,7 @@ updates:
     labels:
       - "dependencies"
       - "automerge"
-    reviewers:
-      - "team-security"         # 任意。組織の場合
     assignees:
-      - "your-github-username"  # 担当者
-    # セキュリティアラートに自動反応
+      - "mani3"
     allow:
       - dependency-type: "direct"
-      - dependency-type: "security"
