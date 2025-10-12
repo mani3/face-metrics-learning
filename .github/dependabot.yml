@@ -1,11 +1,28 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
+  # --- Python / pip dependencies ---
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/"              # requirements.txt などがあるディレクトリ
     schedule:
-      interval: "weekly"
+      interval: "weekly"        # 週1回チェック
+      day: "sunday"             # 日曜に更新
+      time: "04:00"             # UTC (日本時間 13:00)
+    open-pull-requests-limit: 10
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "django"
+        update-types: ["version-update:semver-major"]
+    commit-message:
+      prefix: "deps(pip):"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "automerge"
+    reviewers:
+      - "team-security"         # 任意。組織の場合
+    assignees:
+      - "your-github-username"  # 担当者
+    # セキュリティアラートに自動反応
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "security"
