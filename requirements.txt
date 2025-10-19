@@ -47,7 +47,7 @@ dm-tree==0.1.8
 docutils==0.21.2
 easydict==1.13
 entrypoints==0.4
-etils==1.7.0
+etils==1.13.0
 exceptiongroup==1.2.0
 executing==1.2.0
 faster-whisper==1.2.0
