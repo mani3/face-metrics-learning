@@ -52,7 +52,7 @@ exceptiongroup==1.2.0
 executing==1.2.0
 faster-whisper==1.2.0
 fastjsonschema==2.16.3
-feedgenerator==2.1.0
+feedgenerator==2.2.1
 ffmpeg-python==0.2.0
 filelock==3.13.1
 flake8==7.0.0
