@@ -163,7 +163,7 @@ parso==0.8.4
 passlib==1.7.4
 pelican==4.8.0
 pelican-advance-embed-tweet==1.1.3
-pelican-render-math==1.0.4
+pelican-render-math==1.0.5
 pep8==1.7.1
 pexpect==4.9.0
 pickleshare==0.7.5
