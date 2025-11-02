@@ -250,7 +250,7 @@ tornado==6.5.2
 tqdm==4.67.1
 traitlets==5.14.3
 typeguard==4.4.4
-typing_extensions==4.8.0
+typing_extensions==4.15.0
 typogrify==2.1.0
 tzdata==2023.3
 Unidecode==1.3.6
