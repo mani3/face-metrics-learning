@@ -159,7 +159,7 @@ optree==0.11.0
 packaging==25.0
 pandas==2.2.2
 pandocfilters==1.5.1
-parso==0.8.4
+parso==0.8.5
 passlib==1.7.4
 pelican==4.8.0
 pelican-advance-embed-tweet==1.1.3
