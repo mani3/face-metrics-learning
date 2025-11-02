@@ -103,7 +103,7 @@ json5==0.12.1
 jsonpointer==3.0.0
 jsonschema==4.21.1
 jsonschema-specifications==2025.9.1
-jupyter==1.0.0
+jupyter==1.1.1
 jupyter-console==6.6.3
 jupyter-events==0.12.0
 jupyter-lsp==2.2.5
