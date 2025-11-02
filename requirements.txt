@@ -270,4 +270,4 @@ wsproto==1.2.0
 y-py==0.5.9
 ypy-websocket==0.12.4
 zipp==3.19.1
-zstandard==0.22.0
+zstandard==0.25.0
