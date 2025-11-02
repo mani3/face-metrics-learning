@@ -22,7 +22,7 @@ bleach==6.2.0
 blinker==1.6.2
 boto3==1.40.64
 botocore==1.40.64
-Brotli==1.1.0
+Brotli==1.2.0
 cachetools==5.3.3
 certifi==2024.7.4
 cffi==1.15.1
