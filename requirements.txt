@@ -83,7 +83,7 @@ huggingface-hub==0.34.5
 humanfriendly==10.0
 hyperframe==6.1.0
 identify==2.5.33
-idna==3.7
+idna==3.11
 imageio==2.37.0
 imgaug==0.4.0
 importlib_metadata==7.1.0
