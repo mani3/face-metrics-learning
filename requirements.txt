@@ -169,7 +169,7 @@ pexpect==4.9.0
 pickleshare==0.7.5
 pillow==11.3.0
 platformdirs==4.4.0
-pluggy==1.4.0
+pluggy==1.6.0
 pre-commit==4.3.0
 prometheus_client==0.23.1
 promise==2.3
