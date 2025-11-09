@@ -178,7 +178,7 @@ protobuf==6.32.1
 psutil==7.1.2
 ptyprocess==0.7.0
 publicsuffix2==2.20191221
-PuLP==2.7.0
+PuLP==3.3.0
 pure-eval==0.2.3
 pyarrow==22.0.0
 pyasn1==0.6.1
