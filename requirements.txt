@@ -190,7 +190,7 @@ Pygments==2.17.2
 pylsqpack==0.3.18
 pyOpenSSL==25.3.0
 pyparsing==3.2.5
-pyperclip==1.8.2
+pyperclip==1.11.0
 pyrsistent==0.20.0
 pytest==9.0.0
 python-dateutil==2.9.0.post0
