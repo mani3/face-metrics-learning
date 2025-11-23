@@ -241,7 +241,7 @@ terminado==0.18.1
 testpath==0.6.0
 text-unidecode==1.3
 threadpoolctl==3.5.0
-tifffile==2024.4.24
+tifffile==2025.10.16
 tinycss2==1.5.0
 tokenizers==0.22.1
 toml==0.10.2
