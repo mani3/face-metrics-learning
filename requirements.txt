@@ -55,7 +55,7 @@ fastjsonschema==2.16.3
 feedgenerator==2.2.1
 ffmpeg-python==0.2.0
 filelock==3.20.0
-flake8==7.0.0
+flake8==7.3.0
 Flask==3.1.2
 flatbuffers==25.9.23
 fonttools==4.51.0
