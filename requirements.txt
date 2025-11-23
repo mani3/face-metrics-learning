@@ -37,7 +37,7 @@ contourpy==1.2.1
 cryptography==45.0.7
 ctranslate2==4.6.0
 cycler==0.12.1
-Cython==3.1.6
+Cython==3.2.1
 debugpy==1.8.17
 decorator==5.2.1
 defusedxml==0.7.1
