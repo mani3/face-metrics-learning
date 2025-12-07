@@ -213,7 +213,7 @@ rsa==4.9.1
 ruamel.yaml==0.18.16
 ruamel.yaml.clib==0.2.15
 ruff==0.14.6
-s3transfer==0.15.0
+s3transfer==0.16.0
 scikit-image==0.25.2
 scikit-learn==1.7.2
 scipy==1.16.3
