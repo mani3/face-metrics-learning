@@ -192,7 +192,7 @@ pyOpenSSL==25.3.0
 pyparsing==3.2.5
 pyperclip==1.11.0
 pyrsistent==0.20.0
-pytest==9.0.0
+pytest==9.0.2
 python-dateutil==2.9.0.post0
 python-json-logger==4.0.0
 python-slugify==8.0.4
