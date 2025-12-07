@@ -228,7 +228,7 @@ sortedcontainers==2.4.0
 soupsieve==2.8
 stack-data==0.6.3
 sympy==1.14.0
-tensorboard==2.16.2
+tensorboard==2.20.0
 tensorboard-data-server==0.7.2
 tensorflow==2.20.0
 tensorflow-addons==0.23.0
