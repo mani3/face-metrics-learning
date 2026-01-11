@@ -212,7 +212,7 @@ rpds-py==0.30.0
 rsa==4.9.1
 ruamel.yaml==0.19.1
 ruamel.yaml.clib==0.2.15
-ruff==0.14.10
+ruff==0.14.11
 s3transfer==0.16.0
 scikit-image==0.26.0
 scikit-learn==1.8.0
