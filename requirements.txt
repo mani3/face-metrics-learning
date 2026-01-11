@@ -235,7 +235,7 @@ tensorflow-addons==0.23.0
 tensorflow-datasets==4.9.9
 tensorflow-estimator==2.15.0
 tensorflow-io-gcs-filesystem==0.36.0
-tensorflow-metadata==1.17.2
+tensorflow-metadata==1.17.3
 termcolor==3.3.0
 terminado==0.18.1
 testpath==0.6.0
