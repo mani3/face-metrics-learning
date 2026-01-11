@@ -174,7 +174,7 @@ pre-commit==4.5.1
 prometheus_client==0.23.1
 promise==2.3
 prompt-toolkit==3.0.52
-protobuf==6.33.2
+protobuf==6.33.3
 psutil==7.2.1
 ptyprocess==0.7.0
 publicsuffix2==2.20191221
