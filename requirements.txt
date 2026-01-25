@@ -259,7 +259,7 @@ uritemplate==4.2.0
 urllib3==2.6.3
 urwid-mitmproxy==2.1.2.1
 virtualenv==20.36.1
-wcwidth==0.2.14
+wcwidth==0.3.4
 webcolors==25.10.0
 webencodings==0.5.1
 websocket-client==1.9.0
