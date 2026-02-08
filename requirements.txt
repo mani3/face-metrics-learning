@@ -89,7 +89,7 @@ imgaug==0.4.0
 importlib_metadata==8.7.1
 importlib_resources==6.5.2
 iniconfig==2.3.0
-ipykernel==7.1.0
+ipykernel==7.2.0
 ipython==9.9.0
 ipython-genutils==0.2.0
 ipywidgets==8.1.8
