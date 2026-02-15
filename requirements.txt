@@ -65,7 +65,7 @@ future==1.0.0
 gast==0.7.0
 ghp-import==2.1.0
 google-api-core==2.29.0
-google-api-python-client==2.189.0
+google-api-python-client==2.190.0
 google-auth==2.48.0
 google-auth-httplib2==0.3.0
 google-auth-oauthlib==1.2.4
