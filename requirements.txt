@@ -216,7 +216,7 @@ ruff==0.15.2
 s3transfer==0.16.0
 scikit-image==0.26.0
 scikit-learn==1.8.0
-scipy==1.17.0
+scipy==1.17.1
 seaborn==0.13.2
 Send2Trash==2.1.0
 service-identity==24.2.0
