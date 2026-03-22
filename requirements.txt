@@ -121,7 +121,7 @@ keras==3.13.2
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 kiwisolver==1.4.9
-lazy_loader==0.4
+lazy_loader==0.5
 ldap3==2.9.1
 libclang==18.1.1
 lxml==6.0.2
