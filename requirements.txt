@@ -188,7 +188,7 @@ pycparser==3.0
 pyflakes==3.4.0
 Pygments==2.19.2
 pylsqpack==0.3.23
-pyOpenSSL==25.3.0
+pyOpenSSL==26.0.0
 pyparsing==3.3.2
 pyperclip==1.11.0
 pyrsistent==0.20.0
@@ -203,7 +203,7 @@ pyzmq==27.1.0
 qtconsole==5.7.1
 QtPy==2.4.3
 referencing==0.37.0
-requests==2.32.5
+requests==2.33.0
 requests-oauthlib==2.0.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
