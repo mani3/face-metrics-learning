@@ -200,7 +200,7 @@ pytz==2026.1.post1
 PyWavelets==1.9.0
 PyYAML==6.0.3
 pyzmq==27.1.0
-qtconsole==5.7.1
+qtconsole==5.7.2
 QtPy==2.4.3
 referencing==0.37.0
 requests==2.33.0
