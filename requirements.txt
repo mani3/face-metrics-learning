@@ -187,7 +187,7 @@ pycodestyle==2.14.0
 pycparser==3.0
 pyflakes==3.4.0
 Pygments==2.20.0
-pylsqpack==0.3.23
+pylsqpack==0.3.24
 pyOpenSSL==26.0.0
 pyparsing==3.3.2
 pyperclip==1.11.0
