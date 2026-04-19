@@ -133,7 +133,7 @@ matplotlib-inline==0.2.1
 mccabe==0.7.0
 mdurl==0.1.2
 mistune==3.2.0
-mitmproxy==12.2.1
+mitmproxy==12.2.2
 mitmproxy-macos==0.12.9
 mitmproxy_rs==0.12.9
 ml-dtypes==0.5.4
