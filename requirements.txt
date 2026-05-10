@@ -67,7 +67,7 @@ ghp-import==2.1.0
 google-api-core==2.30.3
 google-api-python-client==2.196.0
 google-auth==2.52.0
-google-auth-httplib2==0.3.1
+google-auth-httplib2==0.4.0
 google-auth-oauthlib==1.4.0
 google-pasta==0.2.0
 googleapis-common-protos==1.74.0
