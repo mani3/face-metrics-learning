@@ -157,7 +157,7 @@ opencv-python==4.13.0.92
 opt-einsum==3.4.0
 optree==0.19.1
 packaging==26.2
-pandas==3.0.2
+pandas==3.0.3
 pandocfilters==1.5.1
 parso==0.8.7
 passlib==1.7.4
