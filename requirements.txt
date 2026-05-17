@@ -249,7 +249,7 @@ tomli==2.4.1
 tornado==6.5.5
 tqdm==4.67.3
 traitlets==5.15.0
-typeguard==4.5.1
+typeguard==4.5.2
 typing_extensions==4.15.0
 typogrify==2.1.0
 tzdata==2026.2
