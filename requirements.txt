@@ -24,7 +24,7 @@ boto3==1.43.9
 botocore==1.43.9
 Brotli==1.2.0
 cachetools==7.1.2
-certifi==2026.4.22
+certifi==2026.5.20
 cffi==2.0.0
 cfgv==3.5.0
 chardet==7.4.3
