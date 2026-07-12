@@ -181,7 +181,7 @@ publicsuffix2==2.20191221
 PuLP==3.3.2
 pure-eval==0.2.3
 pyarrow==24.0.0
-pyasn1==0.6.3
+pyasn1==0.6.4
 pyasn1_modules==0.4.2
 pycodestyle==2.14.0
 pycparser==3.0
