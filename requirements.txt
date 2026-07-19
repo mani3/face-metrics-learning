@@ -135,7 +135,7 @@ mdurl==0.1.2
 mistune==3.3.3
 mitmproxy==12.2.3
 mitmproxy-macos==0.12.10
-mitmproxy_rs==0.12.9
+mitmproxy_rs==0.12.10
 ml-dtypes==0.5.4
 mpmath==1.4.1
 msgpack==1.2.1
