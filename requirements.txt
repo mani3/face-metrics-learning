@@ -171,7 +171,7 @@ pillow==12.3.0
 platformdirs==4.10.1
 pluggy==1.6.0
 pre-commit==4.6.0
-prometheus_client==0.25.0
+prometheus_client==0.26.0
 promise==2.3
 prompt-toolkit==3.0.52
 protobuf==7.35.1
