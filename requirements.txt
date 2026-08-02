@@ -173,7 +173,7 @@ pluggy==1.6.0
 pre-commit==4.6.1
 prometheus_client==0.26.0
 promise==2.3
-prompt-toolkit==3.0.52
+prompt-toolkit==3.0.53
 protobuf==7.35.1
 psutil==7.2.2
 ptyprocess==0.7.0
