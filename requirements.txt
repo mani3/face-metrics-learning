@@ -246,7 +246,7 @@ tinycss2==1.5.1
 tokenizers==0.23.1
 toml==0.10.2
 tomli==2.4.1
-tornado==6.5.7
+tornado==6.5.8
 tqdm==4.70.0
 traitlets==5.16.1
 typeguard==4.6.0
