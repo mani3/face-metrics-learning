@@ -70,7 +70,7 @@ google-auth==2.56.2
 google-auth-httplib2==0.4.1
 google-auth-oauthlib==1.4.0
 google-pasta==0.2.0
-googleapis-common-protos==1.75.0
+googleapis-common-protos==1.75.1
 grpcio==1.83.0
 h11==0.16.0
 h2==4.4.1
