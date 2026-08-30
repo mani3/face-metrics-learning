@@ -29,7 +29,7 @@ cffi==2.1.1
 cfgv==3.5.0
 chardet==7.6.0
 charset-normalizer==3.5.1
-click==8.4.2
+click==8.5.0
 coloredlogs==15.0.1
 comm==0.2.3
 contextlib2==21.6.0
