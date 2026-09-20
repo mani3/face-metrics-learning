@@ -179,7 +179,7 @@ psutil==7.2.2
 ptyprocess==0.7.0
 publicsuffix2==2.20191221
 PuLP==3.3.2
-pure-eval==0.2.3
+pure-eval==0.2.4
 pyarrow==25.0.1
 pyasn1==0.6.4
 pyasn1_modules==0.4.2
