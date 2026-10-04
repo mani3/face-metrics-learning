@@ -84,7 +84,7 @@ humanfriendly==10.0
 hyperframe==6.1.0
 identify==2.6.20
 idna==3.20
-imageio==2.37.4
+imageio==2.38.0
 imgaug==0.4.0
 importlib_metadata==9.0.1
 importlib_resources==7.1.0
