@@ -195,7 +195,7 @@ pyrsistent==0.20.0
 pytest==9.1.1
 python-dateutil==2.9.0.post0
 python-json-logger==4.2.0
-python-slugify==9.1.1
+python-slugify==9.1.2
 pytz==2026.4
 PyWavelets==1.10.0
 PyYAML==6.0.3
