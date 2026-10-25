@@ -35,7 +35,7 @@ comm==0.2.3
 contextlib2==21.6.0
 contourpy==1.4.0
 cryptography==50.0.2
-ctranslate2==4.8.2
+ctranslate2==4.8.3
 cycler==0.12.1
 Cython==3.3.0
 debugpy==1.8.22
