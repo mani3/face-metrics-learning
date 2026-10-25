@@ -27,7 +27,7 @@ cachetools==7.2.4
 certifi==2026.10.19
 cffi==2.1.1
 cfgv==3.5.0
-chardet==7.6.0
+chardet==7.7.0
 charset-normalizer==3.5.2
 click==8.5.0
 coloredlogs==15.0.1
