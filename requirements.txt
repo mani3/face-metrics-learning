@@ -134,7 +134,7 @@ mccabe==0.7.0
 mdurl==0.1.2
 mistune==3.4.0
 mitmproxy==12.3.0
-mitmproxy-macos==0.12.11
+mitmproxy-macos==0.12.15
 mitmproxy_rs==0.12.15
 ml-dtypes==0.6.0
 mpmath==1.4.1
