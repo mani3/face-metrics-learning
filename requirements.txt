@@ -148,7 +148,7 @@ nbformat==5.11.1
 nest-asyncio==1.6.0
 networkx==3.7
 nodeenv==1.12.0
-notebook==7.6.3
+notebook==7.6.5
 notebook_shim==0.2.4
 numpy==2.5.4
 oauthlib==4.0.1
