@@ -136,7 +136,7 @@ mistune==3.4.0
 mitmproxy==12.3.1
 mitmproxy-macos==0.12.15
 mitmproxy_rs==0.12.15
-ml-dtypes==0.6.0
+ml-dtypes==0.7.0
 mpmath==1.4.1
 msgpack==1.2.4
 mtcnn==1.0.0
